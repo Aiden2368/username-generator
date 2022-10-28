@@ -7,6 +7,7 @@ Relatively simple username generator
 `-w {int}` - Amount of random words the full username should have. Default: 2
 
 `-l {int}` - Maximum word length. Default: 8
+
 This is NOT the maximum username length. Just the length of the random words that will be used to generate the full username.
 
 # End note
