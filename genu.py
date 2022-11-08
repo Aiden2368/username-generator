@@ -27,10 +27,10 @@ if HAS_ARGS:
         if opt == "-w":
             AMOUNT_WORDS_IN_USRNAME = int(arg)
 
-def genUsername(useSpecificLen, maxUsrLen, amountOfWords):
-    listToUse = getListItemsByLength(NOUNS, maxUsrLen) if useSpecificLen else NOUNS
+def genUsername():
+    listToUse = getListItemsByLength(NOUNS, MAX_USERLEN) if USE_USRLEN else NOUNS
     toReturn = ""
-    i = amountOfWords
+    i = AMOUNT_WORDS_IN_USRNAME
     while i > 0:
         i -= 1
         toReturn += f"{random.choice(listToUse)}"
@@ -47,7 +47,7 @@ printText = ""
 i = N_USERNAMES
 while i > 0:
     i -= 1
-    printText += f"{genUsername(USE_USRLEN, MAX_USERLEN, AMOUNT_WORDS_IN_USRNAME)}"
+    printText += f"{genUsername()}"
     if i > 0:
         printText += "\n"
 print(printText)
